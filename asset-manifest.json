@@ -1,6 +1,6 @@
 {
-  "main.css": "static/css/main.b7ee3af1.css",
-  "main.css.map": "static/css/main.b7ee3af1.css.map",
-  "main.js": "static/js/main.d983ab19.js",
-  "main.js.map": "static/js/main.d983ab19.js.map"
+  "main.css": "react-redux-router/static/css/main.b7ee3af1.css",
+  "main.css.map": "react-redux-router/static/css/main.b7ee3af1.css.map",
+  "main.js": "react-redux-router/static/js/main.d983ab19.js",
+  "main.js.map": "react-redux-router/static/js/main.d983ab19.js.map"
 }
