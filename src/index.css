@@ -1,0 +1,46 @@
+*{margin: 0; padding: 0;}
+.content{
+    position: relative;
+    padding: 20px 14px;
+}
+.content .top{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+.content .top .title{
+    font-size: 18px;
+    line-height: 24px;
+}
+.content .body{
+    margin: 14px 0;
+}
+.content .body p{
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 14px;
+}
+.content .bottom{
+    display: flex;
+}
+.content .bottom a{
+    flex: 1;
+}
+.content .nav-list{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    background: #fff;
+}
+.content .list-scroll{
+    overflow-y: auto;
+    background: #fff;
+}
+.content .nav-list p{
+    height: 34px;
+    line-height: 34px;
+    border-top: 1px solid #ccc;
+    margin-top: -1px;
+}
