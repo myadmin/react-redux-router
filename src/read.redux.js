@@ -96,7 +96,7 @@ export function getBookList () {
         if (list) {
             dispatch(bookList(list))
         } else {
-            axios.get('http://novel.juhe.im/categories')
+            axios.get('//novel.juhe.im/categories')
                 .then(res => {
                     if (res.status === 200 && res.data.ok) {
                         dispatch(bookList(res.data))
@@ -110,7 +110,7 @@ export function getBookList () {
 
 export function getCategoryList (type) {
     return (dispatch, getState) => {
-        let url = `http://novel.juhe.im/category-info?type=hot&major=${type}&start=0&limit=20`;
+        let url = `//novel.juhe.im/category-info?type=hot&major=${type}&start=0&limit=20`;
 
         axios.get(url)
             .then(res => {
@@ -125,7 +125,7 @@ export function getCategoryList (type) {
 
 export function getBookInfo (id) {
     return dispatch => {
-        let url = `http://novel.juhe.im/book-info/${id}`;
+        let url = `//novel.juhe.im/book-info/${id}`;
 
         axios.get(url)
             .then(res => {
@@ -150,7 +150,7 @@ export function getBook (id, type = true) {
             num--;
         }
         if (bookCatalog.length) {
-            let url3 = `http://novel.juhe.im/chapters/${encodeURIComponent(bookCatalog[num].link)}`;
+            let url3 = `//novel.juhe.im/chapters/${encodeURIComponent(bookCatalog[num].link)}`;
             axios.get(url3)
                 .then(result => {
                     // console.log(result);
@@ -160,7 +160,7 @@ export function getBook (id, type = true) {
                 });
         } else {
             getContent(id, (data) => {
-                let url3 = `http://novel.juhe.im/chapters/${encodeURIComponent(data.chapters[num].link)}`;
+                let url3 = `//novel.juhe.im/chapters/${encodeURIComponent(data.chapters[num].link)}`;
                 axios.get(url3)
                     .then(result => {
                         // console.log(result);
@@ -182,12 +182,12 @@ export function getBookTypeList (id) {
 }
 
 function getContent (id, callback) {
-    let url = `http://novel.juhe.im/book-sources?view=summary&book=${id}`;
+    let url = `//novel.juhe.im/book-sources?view=summary&book=${id}`;
     axios.get(url)
         .then(res => {
             if (res.status === 200 && res.statusText === 'OK') {
                 const links = res.data.filter(v => v.host.indexOf('vip') > -1);
-                let url2 = `http://novel.juhe.im/book-chapters/${links[0]._id}`;
+                let url2 = `//novel.juhe.im/book-chapters/${links[0]._id}`;
                 axios.get(url2)
                     .then(response => {
                         if (response.status === 200 && response.statusText === 'OK') {
